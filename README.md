@@ -20,11 +20,9 @@ The following is a basic step-by-step rationalization for the dynamics of the in
 **Coordinates**<br>
 &nbsp; *Global Coordinate System*:</strong> <i>X</i><sub>global</sub> = [X, Y, Z] with &theta; about Z <br>
 
-**Dynamic Definitions**<br>
+**General Definitions**<br>
 &nbsp; *x (Displacement)* represents the linear translation of the car at the pivot<br>
 &nbsp; *&theta; (Theta)* represents the rotation of the car relative to the neutral axis (&theta; = 0)<br>
-&nbsp; *State Vector*:</strong> z = [x, ẋ, θ, θ̇]<sup>T</sup><br>
-&nbsp; *Input Parameter*:</strong> u = F<sub>traction</sub><br>
 
 **Relevant Force**<br>
 &nbsp; *Drag Force*: F<sub>Drag</sub> = v &times; b <br>
@@ -37,4 +35,7 @@ The following is a basic step-by-step rationalization for the dynamics of the in
 
 ## 2. Nonlinearized ODE System
 
- 
+**General Nonlinear ODE Components**
+&nbsp; *State Vector*:</strong> z = [x, ẋ, θ, θ̇] = [z<sub>1</sub>, z<sub>2</sub>, z<sub>3</sub>, z<sub>4</sub>]<sup>T</sup><br>
+&nbsp; *Input Parameter*:</strong> u = F<sub>Traction</sub><br>
+
