@@ -9,27 +9,27 @@ The following is a basic step-by-step rationalization for the dynamics of the in
 ## 1. General Background
 
 ### Example Stunt Car Parameters (from Fast Rboots 2026)
-Mass (m<sub>car</sub>) = 389.55 g, Length (l<sub>car</sub>) = 175 mm, Width (w<sub>car</sub>) = 140 mm, Height (h<sub>car</sub>) = 75 mm, Radius (r<sub>wheel</sub>) = 75 mm<br>
+&nbsp; Mass (m<sub>car</sub>) = 389.55 g, Length (l<sub>car</sub>) = 175 mm, Width (w<sub>car</sub>) = 140 mm, Height (h<sub>car</sub>) = 75 mm, Radius (r<sub>wheel</sub>) = 75 mm<br>
 
 ### Global Definitions
 
 **Coordinates**<br>
-*Global Coordinate System*:</strong> <i>X</i><sub>global</sub> = [X, Y, Z] with &theta; about Z <br>
+&nbsp; *Global Coordinate System*:</strong> <i>X</i><sub>global</sub> = [X, Y, Z] with &theta; about Z <br>
 
 **Dynamic Definitions**<br>
 &nbsp; *x (Displacement)* represents the linear translation of the car at the pivot<br>
-*&theta; (Theta)* represents the rotation of the car relative to the neutral axis (&theta; = 0)<br>
-*State Vector*:</strong> z = [x, ẋ, θ, θ̇]<sup>T</sup><br>
-*Input Parameter*:</strong> u = F<sub>traction</sub><br>
+&nbsp; *&theta; (Theta)* represents the rotation of the car relative to the neutral axis (&theta; = 0)<br>
+&nbsp; *State Vector*:</strong> z = [x, ẋ, θ, θ̇]<sup>T</sup><br>
+&nbsp; *Input Parameter*:</strong> u = F<sub>traction</sub><br>
 
 **Relevant Force**<br>
-*Drag Force*: F<sub>Drag</sub> = v &times; b <br>
-*Gravitational Force*: F<sub>Gravity</sub> = m &times; g <br>
-*Tractional Force*: F<sub>Traction</sub> = &tau; / R <br>
-*Normal Force*: F<sub>Normal</sub> = - m &times; g <br>
+&nbsp; *Drag Force*: F<sub>Drag</sub> = v &times; b <br>
+&nbsp; *Gravitational Force*: F<sub>Gravity</sub> = m &times; g <br>
+&nbsp; *Tractional Force*: F<sub>Traction</sub> = &tau; / R <br>
+&nbsp; *Normal Force*: F<sub>Normal</sub> = - m &times; g <br>
 
 **Visual Diagram**<br>
-![System Dynamics Model for Stunt Car](images/FBD_Diagram.png)
+&nbsp; ![System Dynamics Model for Stunt Car](images/FBD_Diagram.png)
 
 ## 2. Nonlinearized ODE System
 
