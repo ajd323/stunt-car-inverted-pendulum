@@ -9,11 +9,9 @@ The following is a basic step-by-step rationalization for the dynamics of the in
 ## 1. General Background
 
 ### Example Stunt Car Parameters (from Fast Rboots 2026)
-Mass (m<sub>car</sub>) = 389.55 g; Length (l<sub>car</sub>) = 175 mm; Width (w<sub>car</sub>) = 140 mm; Height (h<sub>car</sub>) = 75 mm, Radius (r<sub>wheel</sub>) = 75 mm<br>
+Mass (m<sub>car</sub>) = 389.55 g, Length (l<sub>car</sub>) = 175 mm, Width (w<sub>car</sub>) = 140 mm, Height (h<sub>car</sub>) = 75 mm, Radius (r<sub>wheel</sub>) = 75 mm<br>
 
-### Free Body Diagram Components
-
-**Global Definitions**
+### Global Definitions
 
 <strong>Global Coordinate System:</strong> <i>X</i><sub>global</sub> = [X, Y, Z] with &theta; about Z <br>
 <p>
