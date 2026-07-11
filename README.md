@@ -47,10 +47,15 @@ The following is a basic step-by-step rationalization for the dynamics of the in
 &nbsp; *State Vector*:</strong> z = [z<sub>1</sub>, z<sub>2</sub>, z<sub>3</sub>, z<sub>4</sub>]<sup>T</sup> = [x, ẋ, θ, θ̇]<br>
 &nbsp; *Input Parameter*:</strong> u = F<sub>Traction</sub><br>
 
-&nbsp; *Linear Displacement*: z<sub>1</sub> = x&nbsp;&nbsp;&nbsp;&nbsp;ż<sub>1</sub> = z<sub>2</sub><br>
+**Standard Nonlinear ODE**<br>
+&nbsp; *Linear Displacement*: z<sub>1</sub> = x
+&nbsp; *Linear Velocity*: z<sub>2</sub> = ẋ
+&nbsp; *Angular Displacement*: z<sub>3</sub> = θ
+&nbsp; *Angular Velocity*: z<sub>4</sub> = θ̇
 
-&nbsp; *Linear Velocity*: z<sub>2</sub> = ẋ&nbsp;&nbsp;&nbsp;&nbsp;ż<sub>2</sub> = [ ((1/3)l² + (1/12)w²)·u + b·z<sub>2</sub>·((l²/4)cos²z<sub>3</sub> − ((1/3)l² + (1/12)w²)) + ((1/3)l² + (1/12)w²)·m<sub>car</sub>·(l/2)·sin(z<sub>3</sub>)·z<sub>4</sub>² − (l²/4)·m<sub>car</sub>·g·sin(z<sub>3</sub>)·cos(z<sub>3</sub>) ] / (m<sub>car</sub>·((1/12)(l² + w²) + (l²/4)sin²z<sub>3</sub>))<br>
+**Derivative Nonlinear ODE**<br>
 
-&nbsp; *Angular Displacement*: z<sub>3</sub> = θ&nbsp;&nbsp;&nbsp;&nbsp;ż<sub>3</sub> = z<sub>4</sub><br>
-
-&nbsp; *Angular Velocity*: z<sub>4</sub> = θ̇&nbsp;&nbsp;&nbsp;&nbsp;ż<sub>4</sub> = (l/2) / ((1/12)(l² + w²) + (l²/4)sin²z<sub>3</sub>) · [ g·sin(z<sub>3</sub>) − u·cos(z<sub>3</sub>)/m<sub>car</sub> − (l/2)·z<sub>4</sub>²·sin(z<sub>3</sub>)·cos(z<sub>3</sub>) ]<br>
+&nbsp; *Linear Velocity*: ż<sub>1</sub> = z<sub>2</sub><br>
+&nbsp; *Linear Acceleration*: ż<sub>2</sub> = [ ((1/3)l² + (1/12)w²)·u + b·z<sub>2</sub>·((l²/4)cos²z<sub>3</sub> − ((1/3)l² + (1/12)w²)) + ((1/3)l² + (1/12)w²)·m<sub>car</sub>·(l/2)·sin(z<sub>3</sub>)·z<sub>4</sub>² − (l²/4)·m<sub>car</sub>·g·sin(z<sub>3</sub>)·cos(z<sub>3</sub>) ] / (m<sub>car</sub>·((1/12)(l² + w²) + (l²/4)sin²z<sub>3</sub>))<br>
+&nbsp; *Angular Velocity*: ż<sub>3</sub> = z<sub>4</sub><br>
+&nbsp; *Angular Acceleration*: ż<sub>4</sub> = (l/2) / ((1/12)(l² + w²) + (l²/4)sin²z<sub>3</sub>) · [ g·sin(z<sub>3</sub>) − u·cos(z<sub>3</sub>)/m<sub>car</sub> − (l/2)·z<sub>4</sub>²·sin(z<sub>3</sub>)·cos(z<sub>3</sub>) ]<br>
