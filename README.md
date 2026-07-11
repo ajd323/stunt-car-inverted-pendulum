@@ -11,9 +11,15 @@ Mass (m) = 389.55 g; Length (l) = 175 mm; Width (w) = 140 mm; Height (h) = 75 mm
 
 ## Free Body Diagram Components
 
-F<sub>Drag</sub> = v &times; b
-F<sub>Gravity</sub> = m &times; g
-F<sub>Traction</sub> = &tau; &divide; R
+F<sub>Drag</sub> = v &times; b <br>
+F<sub>Gravity</sub> = m &times; g <br>
+F<sub>Traction</sub> =
+<math>
+  <mfrac>
+    <mi>&tau;</mi>
+    <mi>R</mi>
+  </mfrac>
+</math><br>
 
 
 ## 2. Nonlinearized ODE System
