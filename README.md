@@ -24,11 +24,13 @@ The following is a basic step-by-step rationalization for the dynamics of the in
 &nbsp; *x (Displacement)* represents the linear translation of the car at the pivot<br>
 &nbsp; *ẋ (Velocity)* represents the linear velocity of the car at the pivot<br>
 &nbsp; *θ (Altitude)* represents the rotation of the car relative to the neutral axis (&theta; = 0)<br>
-&nbsp; *θ̇ (Theta)* represents the angular velocity of the car relative to the neutral axis (&theta; = 0)<br>
+&nbsp; *θ̇ (Angular Velocity)* represents the angular velocity of the car relative to the neutral axis (&theta; = 0)<br>
 
 **Initial Conditions (ICs)**<br>
-&nbsp; *Vertical Alignment*: x(0) = 0
-&nbsp; *No Vertical Velocity*: x(0) = 0
+&nbsp; *Vertical Alignment*: x(0) = 0 mm<br>
+&nbsp; *No Vertical Velocity*: ẋ(0) = 0 mm/s<br>
+&nbsp; *Pre-Set Angular Discplacement*: θ(0) = 0.5°<br>
+&nbsp; *No Angular Velocity*: ẋ(0) = 0°/s<br>
 
 **Relevant Force**<br>
 &nbsp; *Drag Force*: F<sub>Drag</sub> = v &times; b <br>
@@ -45,7 +47,7 @@ The following is a basic step-by-step rationalization for the dynamics of the in
 &nbsp; *State Vector*:</strong> z = [z<sub>1</sub>, z<sub>2</sub>, z<sub>3</sub>, z<sub>4</sub>]<sup>T</sup> = [x, ẋ, θ, θ̇]<br>
 &nbsp; *Input Parameter*:</strong> u = F<sub>Traction</sub><br>
 
-&nbsp; *Linear Displacement*: z<sub>1</sub> = x<br>
-&nbsp; *Linear Velocity*: z<sub>2</sub> = ẋ = <br>
-&nbsp; *Angular Displacement*: z<sub>3</sub> = θ = <br>
-&nbsp; *Angular Velocity*: z<sub>4</sub> = θ̇<br>
+&nbsp; *Linear Displacement*: z<sub>1</sub> = x&nbsp;&nbsp;&nbsp;&nbsp;ż<sub>1</sub> = z<sub>2</sub><br>
+&nbsp; *Linear Velocity*: z<sub>2</sub> = ẋ&nbsp;&nbsp;&nbsp;&nbsp;ż<sub>2</sub> = [ ((1/3)l² + (1/12)w²)·u + b·z<sub>2</sub>·((l²/4)cos²z<sub>3</sub> − ((1/3)l² + (1/12)w²)) + ((1/3)l² + (1/12)w²)·m<sub>car</sub>·(l/2)·sin(z<sub>3</sub>)·z<sub>4</sub>² − (l²/4)·m<sub>car</sub>·g·sin(z<sub>3</sub>)·cos(z<sub>3</sub>) ] / (m<sub>car</sub>·((1/12)(l² + w²) + (l²/4)sin²z<sub>3</sub>))<br>
+&nbsp; *Angular Displacement*: z<sub>3</sub> = θ&nbsp;&nbsp;&nbsp;&nbsp;ż<sub>3</sub> = z<sub>4</sub><br>
+&nbsp; *Angular Velocity*: z<sub>4</sub> = θ̇&nbsp;&nbsp;&nbsp;&nbsp;ż<sub>4</sub> = (l/2) / ((1/12)(l² + w²) + (l²/4)sin²z<sub>3</sub>) · [ g·sin(z<sub>3</sub>) − u·cos(z<sub>3</sub>)/m<sub>car</sub> − (l/2)·z<sub>4</sub>²·sin(z<sub>3</sub>)·cos(z<sub>3</sub>) ]<br>
