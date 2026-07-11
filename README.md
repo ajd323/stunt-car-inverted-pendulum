@@ -13,17 +13,20 @@ Mass (m<sub>car</sub>) = 389.55 g, Length (l<sub>car</sub>) = 175 mm, Width (w<s
 
 ### Global Definitions
 
-<strong>Global Coordinate System:</strong> <i>X</i><sub>global</sub> = [X, Y, Z] with &theta; about Z <br>
-<p>
-<strong>State:</strong> z = [x, ẋ, θ, θ̇]<sup>T</sup><br>
-<strong>Input:</strong> u = F<sub>traction</sub>
-</p>
+**Coordinates**<br>
+*Global Coordinate System*:</strong> <i>X</i><sub>global</sub> = [X, Y, Z] with &theta; about Z <br>
+
+**Dynamic Definitions**<br>
+x represents the linear translation of the car at the pivot
+&theta; represents the rotation of the car relative to the neutral axis (&theta; = 0)
+*State Vector*:</strong> z = [x, ẋ, θ, θ̇]<sup>T</sup><br>
+*Input Parameter*:</strong> u = F<sub>traction</sub>
 
 **Relevant Force**<br>
-F<sub>Drag</sub> = v &times; b <br>
-F<sub>Gravity</sub> = m &times; g <br>
-F<sub>Traction</sub> = &tau; / R <br>
-F<sub>Normal</sub> = - m &times; g <br>
+*Drag Force*: F<sub>Drag</sub> = v &times; b <br>
+*Gravitational Force*: F<sub>Gravity</sub> = m &times; g <br>
+*Tractional Force*: F<sub>Traction</sub> = &tau; / R <br>
+*Normal Force*: F<sub>Normal</sub> = - m &times; g <br>
 
 **Visual Diagram**<br>
 ![System Dynamics Model for Stunt Car](images/FBD_Diagram.png)
