@@ -40,20 +40,23 @@ The following is a basic step-by-step rationalization for the dynamics of the un
 &nbsp; ![System Dynamics Model for Stunt Car](images/FBD_Diagram.png)
 
 **2nd Order ODE Dynamic Representation of Center of Mass**
-&nbsp; F<sub>External</sub> = m<sub>car</sub>·a
-&nbsp; **F<sub>x</sub>**: F<sub>Traction</sub> - F<sub>Drag</sub> = m<sub>car</sub>·a<sub>x</sub>
-&nbsp; **F<sub>y</sub>**: F<sub>Gravity</sub> = m<sub>car</sub>·a<sub>y</sub>
-&nbsp; *Solve for acceleration terms (a<sub>x</sub> and a<sub>y</sub>) in terms of displacement and rotation about the center of mass*:
-&nbsp;&nbsp; x<sub>COM</sub> = x<sub>Pivot</sub> + l/2·sin(θ)
-&nbsp;&nbsp; y<sub>COM</sub> = l/2·cos(θ)
-&nbsp;&nbsp; ẋ<sub>COM</sub> = ẋ<sub>Pivot</sub> + l/2·cos(θ)·θ̇
-&nbsp;&nbsp; ẏ<sub>COM</sub> = -l/2·sin(θ)·θ̇
-&nbsp;&nbsp; ẍ<sub>COM</sub> = ẍ<sub>Pivot</sub> + l/2·(cos(θ)·θ̈ - sin(θ)·θ̇<sup>2</sup>)
-&nbsp;&nbsp; ÿ<sub>COM</sub> = -l/2·(sin(θ)·θ̈ + cos(θ)·θ̇<sup>2</sup>)
-&nbsp; **F<sub>x</sub>**: F<sub>Traction</sub> - F<sub>Drag</sub> = m<sub>car</sub>·(ẍ<sub>Pivot</sub> + l/2·(cos(θ)·θ̈ - sin(θ)·θ̇<sup>2</sup>))
-&nbsp; **F<sub>y</sub>**: F<sub>Gravity</sub> = -m<sub>car</sub>·l/2·(sin(θ)·θ̈ + cos(θ)·θ̇<sup>2</sup>)
-&nbsp; **F<sub>x</sub>**: &tau;/R - ẋ·b = m<sub>car</sub>·(ẍ<sub>Pivot</sub> + l/2·(cos(θ)·θ̈ - sin(θ)·θ̇<sup>2</sup>))
-&nbsp; **F<sub>y</sub>**: m·g = -m<sub>car</sub>·l/2·(sin(θ)·θ̈ + cos(θ)·θ̇<sup>2</sup>)
+&nbsp; F<sub>External</sub> = m<sub>car</sub>·a<br>
+&nbsp; **F<sub>x</sub>**: F<sub>Traction</sub> - F<sub>Drag</sub> = m<sub>car</sub>·a<sub>x</sub><br>
+&nbsp; **F<sub>y</sub>**: F<sub>Gravity</sub> = m<sub>car</sub>·a<sub>y</sub><br>
+
+&nbsp; *Solve for acceleration terms (a<sub>x</sub> and a<sub>y</sub>) in terms of displacement and rotation about the center of mass*:<br>
+
+&nbsp;&nbsp; x<sub>COM</sub> = x<sub>Pivot</sub> + l/2·sin(θ)<br>
+&nbsp;&nbsp; y<sub>COM</sub> = l/2·cos(θ)<br>
+&nbsp;&nbsp; ẋ<sub>COM</sub> = ẋ<sub>Pivot</sub> + l/2·cos(θ)·θ̇<br>
+&nbsp;&nbsp; ẏ<sub>COM</sub> = -l/2·sin(θ)·θ̇<br>
+&nbsp;&nbsp; ẍ<sub>COM</sub> = ẍ<sub>Pivot</sub> + l/2·(cos(θ)·θ̈ - sin(θ)·θ̇<sup>2</sup>)<br>
+&nbsp;&nbsp; ÿ<sub>COM</sub> = -l/2·(sin(θ)·θ̈ + cos(θ)·θ̇<sup>2</sup>)<br>
+
+&nbsp; **F<sub>x</sub>**: F<sub>Traction</sub> - F<sub>Drag</sub> = m<sub>car</sub>·(ẍ<sub>Pivot</sub> + l/2·(cos(θ)·θ̈ - sin(θ)·θ̇<sup>2</sup>))<br>
+&nbsp; **F<sub>y</sub>**: F<sub>Gravity</sub> = -m<sub>car</sub>·l/2·(sin(θ)·θ̈ + cos(θ)·θ̇<sup>2</sup>)<br>
+&nbsp; **F<sub>x</sub>**: &tau;/R - ẋ·b = m<sub>car</sub>·(ẍ<sub>Pivot</sub> + l/2·(cos(θ)·θ̈ - sin(θ)·θ̇<sup>2</sup>))<br>
+&nbsp; **F<sub>y</sub>**: m·g = -m<sub>car</sub>·l/2·(sin(θ)·θ̈ + cos(θ)·θ̇<sup>2</sup>)<br>
 
 ## 2. Nonlinearized ODE System
 
