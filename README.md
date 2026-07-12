@@ -74,7 +74,7 @@ The following is a basic step-by-step rationalization for the dynamics of the un
 &nbsp; *Angular Velocity*: ż<sub>3</sub> = z<sub>4</sub> = θ̇<br>
 &nbsp; *Angular Acceleration*: ż<sub>4</sub> = (l/2) / ((1/12)(l² + w²) + (l²/4)sin²z<sub>3</sub>) · [ g·sin(z<sub>3</sub>) − u·cos(z<sub>3</sub>)/m<sub>car</sub> − (l/2)·z<sub>4</sub>²·sin(z<sub>3</sub>)·cos(z<sub>3</sub>) ]<br>
 
-## 3. Linearized Stat-Space Model
+## 3. Linearized State-Space Model
 
 &nbsp; *Equilibrium Point*: z<sub>eq</sub> = [0, 0, 0, 0]<sup>T</sup>, u<sub>eq</sub> = 0 &nbsp;(upright, at rest, no input)<br>
 &nbsp; *Linearization Method*: first-order Taylor expansion of ż = f(z,u) about the equilibrium, via the Jacobians A = &part;f/&part;z |<sub>eq</sub> and B = &part;f/&part;u |<sub>eq</sub><br>

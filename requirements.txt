@@ -1,0 +1,4 @@
+git clone <your-repo-url>
+cd <repo>
+pip install -r requirements.txt
+python3 pendulum_open_loop_sim.py --theta0 0.5
