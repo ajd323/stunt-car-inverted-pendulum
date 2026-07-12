@@ -1,32 +1,15 @@
-"""
-Desktop GUI for the stunt-car inverted-pendulum open-loop simulator.
-
-Opens a real window with editable fields for the physical parameters and
-initial conditions, a "Simulate" button that runs the model and redraws the
-response in an embedded plot, and a "Save Plot..." button that opens a file
-dialog to save the current figure wherever you like (PNG, PDF, or SVG).
-
-Run locally with:
-    python3 pendulum_gui.py
-
-IMPORTANT: this uses Tkinter, which opens a native desktop window. It will
-NOT display inside GitHub Codespaces or any other headless/browser-based
-environment -- there's no screen for it to appear on there. Run this on
-your own machine. The simulation itself lives in pendulum_model.py, which
-has no GUI dependency, so if you later want an interactive version that
-*does* work in Codespaces, a Jupyter/ipywidgets notebook can import the
-exact same pendulum_model functions without touching this file.
-"""
-
+# Imports from Tinker Toolkit
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 
+# Imports for mathematical computations and plotting
 import numpy as np
 import matplotlib
 matplotlib.use("TkAgg")
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from matplotlib.figure import Figure
 
+# Imports from mathmetical part of pendulum model
 from pendulum_model import DEFAULT_PARAMS, simulate
 
 
