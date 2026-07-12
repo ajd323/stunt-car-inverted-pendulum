@@ -31,7 +31,7 @@ The following is a basic step-by-step rationalization for the dynamics of the un
 &nbsp; *No Angular Velocity*: θ̇(0) = 0°/s<br>
 
 **Relevant Forces**<br>
-&nbsp; *Drag Force*: F<sub>Drag</sub> = ẋ·b <br>
+&nbsp; *Drag Force*: F<sub>Drag</sub> = (1/2)·&rho;·C<sub>D</sub>·A·ẋ<br>
 &nbsp; *Gravitational Force*: F<sub>Gravity</sub> = m·g <br>
 &nbsp; *Traction Force*: F<sub>Traction</sub> = &tau;/R <br>
 &nbsp; *Normal Force*: F<sub>Normal</sub> = -m·g <br>
@@ -54,7 +54,7 @@ The following is a basic step-by-step rationalization for the dynamics of the un
 
 &nbsp; **F<sub>x</sub>**: F<sub>Traction</sub> - F<sub>Drag</sub> = m<sub>car</sub>·(ẍ<sub>Pivot</sub> + l/2·(cos(θ)·θ̈ - sin(θ)·θ̇<sup>2</sup>))<br>
 &nbsp; **F<sub>y</sub>**: F<sub>Gravity</sub> = -m<sub>car</sub>·l/2·(sin(θ)·θ̈ + cos(θ)·θ̇<sup>2</sup>)<br>
-&nbsp; **F<sub>x</sub>**: &tau;/R - ẋ·b = m<sub>car</sub>·(ẍ<sub>Pivot</sub> + l/2·(cos(θ)·θ̈ - sin(θ)·θ̇<sup>2</sup>))<br>
+&nbsp; **F<sub>x</sub>**: &tau;/R -  (1/2)·&rho;·C<sub>D</sub>·(l·w)·ẋ = m<sub>car</sub>·(ẍ<sub>Pivot</sub> + l/2·(cos(θ)·θ̈ - sin(θ)·θ̇<sup>2</sup>))<br>
 &nbsp; **F<sub>y</sub>**: m·g = -m<sub>car</sub>·l/2·(sin(θ)·θ̈ + cos(θ)·θ̇<sup>2</sup>)<br>
 
 ## 2. Nonlinear Form of the ODE System
@@ -70,7 +70,7 @@ The following is a basic step-by-step rationalization for the dynamics of the un
 
 ### Derivative Nonlinear ODE (**ż** = [ż<sub>1</sub>, ż<sub>2</sub>, ż<sub>3</sub>, ż<sub>4</sub>]<sup>T</sup>)**<br>
 &nbsp; *Linear Velocity*: ż<sub>1</sub> = z<sub>2</sub> = ẋ<br>
-&nbsp; *Linear Acceleration*: ż<sub>2</sub> = [ ((1/3)l² + (1/12)w²)·u + b·z<sub>2</sub>·((l²/4)cos²z<sub>3</sub> − ((1/3)l² + (1/12)w²)) + ((1/3)l² + (1/12)w²)·m<sub>car</sub>·(l/2)·sin(z<sub>3</sub>)·z<sub>4</sub>² − (l²/4)·m<sub>car</sub>·g·sin(z<sub>3</sub>)·cos(z<sub>3</sub>) ] / (m<sub>car</sub>·((1/12)(l² + w²) + (l²/4)sin²z<sub>3</sub>))<br>
+&nbsp; *Linear Acceleration*: ż<sub>2</sub> = [ ((1/3)l² + (1/12)w²)·u + C<sub>d</sub>·z<sub>2</sub>·|z<sub>2</sub>|·((l²/4)cos²z<sub>3</sub> − ((1/3)l² + (1/12)w²)) + ((1/3)l² + (1/12)w²)·m<sub>car</sub>·(l/2)·sin(z<sub>3</sub>)·z<sub>4</sub>² − (l²/4)·m<sub>car</sub>·g·sin(z<sub>3</sub>)·cos(z<sub>3</sub>) ] / (m<sub>car</sub>·((1/12)(l² + w²) + (l²/4)sin²z<sub>3</sub>))<br>
 &nbsp; *Angular Velocity*: ż<sub>3</sub> = z<sub>4</sub> = θ̇<br>
 &nbsp; *Angular Acceleration*: ż<sub>4</sub> = (l/2) / ((1/12)(l² + w²) + (l²/4)sin²z<sub>3</sub>) · [ g·sin(z<sub>3</sub>) − u·cos(z<sub>3</sub>)/m<sub>car</sub> − (l/2)·z<sub>4</sub>²·sin(z<sub>3</sub>)·cos(z<sub>3</sub>) ]<br>
 
@@ -93,7 +93,7 @@ u = [ &tau; ]
 
 A =
 [ 0     1               0              0 ]
-[ 0   -b/m_car     -3gl²/(l²+w²)       0 ]
+[ 0     0          -3gl²/(l²+w²)       0 ]
 [ 0     0               0              1 ]
 [ 0     0          6gl/(l²+w²)         0 ]
 
