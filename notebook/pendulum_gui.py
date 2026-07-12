@@ -1,3 +1,23 @@
+"""
+Desktop GUI for the stunt-car inverted-pendulum open-loop simulator.
+
+Opens a real window with editable fields for the physical parameters and
+initial conditions, a "Simulate" button that runs the model and redraws the
+response in an embedded plot, and a "Save Plot..." button that opens a file
+dialog to save the current figure wherever you like (PNG, PDF, or SVG).
+
+Run locally with:
+    python3 pendulum_gui.py
+
+IMPORTANT: this uses Tkinter, which opens a native desktop window. It will
+NOT display inside GitHub Codespaces or any other headless/browser-based
+environment -- there's no screen for it to appear on there. Run this on
+your own machine. The simulation itself lives in pendulum_model.py, which
+has no GUI dependency, so if you later want an interactive version that
+*does* work in Codespaces, a Jupyter/ipywidgets notebook can import the
+exact same pendulum_model functions without touching this file.
+"""
+
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 
@@ -101,9 +121,10 @@ class PendulumApp(tk.Tk):
         self._draw(sol)
 
         theta_deg = np.degrees(sol.y[2])
-        self.status.config(
-            text=f"Final θ: {theta_deg[-1]:.2f}°\nPeak |θ|: {np.max(np.abs(theta_deg)):.2f}°"
-        )
+        status_text = f"Final θ: {theta_deg[-1]:.2f}°\nPeak |θ|: {np.max(np.abs(theta_deg)):.2f}°"
+        if sol.fell_at is not None:
+            status_text = f"FELL at t = {sol.fell_at:.3f}s\n" + status_text
+        self.status.config(text=status_text)
 
     def _draw(self, sol):
         t = sol.t
@@ -136,6 +157,14 @@ class PendulumApp(tk.Tk):
         self.axes[1, 1].set_ylabel("θ̇ (deg/s)")
         self.axes[1, 1].set_xlabel("time (s)")
         self.axes[1, 1].grid(alpha=0.3)
+
+        if sol.fell_at is not None:
+            for ax in self.axes.flat:
+                ax.axvline(sol.fell_at, color="black", linewidth=1, linestyle="--", alpha=0.6)
+            self.axes[0, 0].annotate(
+                "fell", xy=(sol.fell_at, self.axes[0, 0].get_ylim()[1]),
+                xytext=(3, -12), textcoords="offset points", fontsize=8, color="#555",
+            )
 
         self.fig.tight_layout(pad=3.0)
         self.canvas.draw()
