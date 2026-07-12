@@ -34,7 +34,7 @@ FIELDS = [
     ("mass", "Mass, m_car [kg]", DEFAULT_PARAMS["m_car"]),
     ("length", "Length, l [m]", DEFAULT_PARAMS["l"]),
     ("width", "Width, w [m]", DEFAULT_PARAMS["w"]),
-    ("damping", "Damping, b [N*s/m]", DEFAULT_PARAMS["b"]),
+    ("damping", "Drag coeff., Cd [N*s^2/m^2]", DEFAULT_PARAMS["Cd"]),
     ("gravity", "Gravity, g [m/s^2]", DEFAULT_PARAMS["g"]),
     ("x0", "Initial position, x0 [m]", 0.0),
     ("xdot0", "Initial velocity, xdot0 [m/s]", 0.0),
@@ -106,7 +106,7 @@ class PendulumApp(tk.Tk):
             "m_car": v["mass"],
             "l": v["length"],
             "w": v["width"],
-            "b": v["damping"],
+            "Cd": v["damping"],
             "g": v["gravity"],
         }
         z0 = [v["x0"], v["xdot0"], np.radians(v["theta0"]), np.radians(v["thetadot0"])]
