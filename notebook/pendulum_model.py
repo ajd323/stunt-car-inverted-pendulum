@@ -5,6 +5,7 @@
 # Imports for mathematical computations and plotting
 import numpy as np
 from scipy.integrate import solve_ivp
+from types import SimpleNamespace
 
 # Dictionaries
 DEFAULT_PARAMS = {
@@ -64,3 +65,72 @@ def simulate(params, z0, t_final, dt, u_fn, stop_on_fall = True, hold_after_fall
     solution.fell_at = fell_at
 
     return solution
+
+class PID:
+    def __init__(self, kp, ki, kd, setpoint=0.0, u_limit=None):
+        self.kp = kp
+        self.ki = ki
+        self.kd = kd
+        self.setpoint = setpoint
+        self.u_limit = u_limit
+        self.integral = 0.0
+ 
+    def reset(self):
+        self.integral = 0.0
+ 
+    def compute(self, dt, theta, theta_dot):
+        error = theta - self.setpoint
+        u_unsat = self.kp * error + self.ki * self.integral + self.kd * theta_dot
+ 
+        if self.u_limit is not None:
+            u = float(np.clip(u_unsat, -self.u_limit, self.u_limit))
+            saturated = u != u_unsat
+        else:
+            u = u_unsat
+            saturated = False
+        if not saturated or (u_unsat * error < 0):
+            self.integral += error * dt
+        return u
+ 
+def _rk4_step(z, t, dt, params, u):
+    k1 = np.array(stunt_car_dynamics(t, z, params, lambda _t: u))
+    k2 = np.array(stunt_car_dynamics(t + dt / 2.0, z + dt / 2.0 * k1, params, lambda _t: u))
+    k3 = np.array(stunt_car_dynamics(t + dt / 2.0, z + dt / 2.0 * k2, params, lambda _t: u))
+    k4 = np.array(stunt_car_dynamics(t + dt, z + dt * k3, params, lambda _t: u))
+    return z + (dt / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
+ 
+ 
+def simulate_closed_loop(params, z0, t_final, dt, controller, stop_on_fall=True, hold_after_fall=True):
+    controller.reset()
+ 
+    n_steps = int(round(t_final / dt)) + 1
+    t_arr = np.linspace(0.0, n_steps * dt, n_steps, endpoint=False)
+    z_arr = np.zeros((4, n_steps))
+    u_arr = np.zeros(n_steps)
+ 
+    z = np.array(z0, dtype=float)
+    fell_at = None
+ 
+    for i in range(n_steps):
+        t = t_arr[i]
+        theta, theta_dot = z[2], z[3]
+        u = controller.compute(dt, theta, theta_dot)
+ 
+        z_arr[:, i] = z
+        u_arr[i] = u
+ 
+        if stop_on_fall and np.cos(theta) <= 0.0 and fell_at is None:
+            fell_at = t
+            if not hold_after_fall:
+                t_arr = t_arr[: i + 1]
+                z_arr = z_arr[:, : i + 1]
+                u_arr = u_arr[: i + 1]
+                break
+            # hold the fallen state constant for the remaining samples
+            z_arr[:, i:] = z.reshape(-1, 1)
+            u_arr[i:] = u
+            break
+ 
+        z = _rk4_step(z, t, dt, params, u)
+ 
+    return SimpleNamespace(t=t_arr, y=z_arr, u=u_arr, fell_at=fell_at, success=True, message="")

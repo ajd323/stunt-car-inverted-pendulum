@@ -178,7 +178,6 @@ class PendulumApp(tk.Tk):
         self.fig.savefig(path, dpi=150)
         self.status.config(text=f"Saved to:\n{path}")
 
-
 if __name__ == "__main__":
     app = PendulumApp()
     app.mainloop()
