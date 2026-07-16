@@ -109,7 +109,8 @@ B =
 
 ## 1. LaPlace Transform (from Linearized Model)
 
-**With small angle approximation**
+**With small angle approximation: ** θ̈ = A0 - Bu
+&nbsp; θ̈ - A0 = Bu
 
 ## 2. Poles of Response Dynamics
 
