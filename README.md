@@ -5,6 +5,8 @@ The following is a control system representation of a stunt car operating as an 
 
 The following is a basic step-by-step rationalization for the dynamics of the unstable system, including the implicit and explicit ordinary differential equations (ODEs):
 
+# Background for "Pendulum_Model.py"
+
 ## 1. General Background
 
 ### Example Stunt Car Parameters (from Fast Robots 2026)
@@ -102,3 +104,13 @@ B =
 [            0               ]
 [  -6l/(m_car(l² + w²))       ]
 </pre>
+
+# Background for "Pendulum_Tuner.py"
+
+## 1. LaPlace Transform (from Linearized Model)
+
+**With small angle approximation**
+
+## 2. Poles of Response Dynamics
+
+## 3. Critical Dampening Ratio
