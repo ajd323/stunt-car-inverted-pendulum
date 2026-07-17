@@ -63,7 +63,8 @@ The following is a basic step-by-step rationalization for the dynamics of the un
 - ẏ<sub>COM</sub> = -l/2·sin(θ)·θ̇
 - ẍ<sub>COM</sub> = ẍ<sub>Pivot</sub> + l/2·(cos(θ)·θ̈ − sin(θ)·θ̇<sup>2</sup>)
 - ÿ<sub>COM</sub> = -l/2·(sin(θ)·θ̈ + cos(θ)·θ̇<sup>2</sup>)
-Substituting back into the force balances:
+
+*Substituting back into the force balances:* <br>
  
 - **F<sub>x</sub>**: F<sub>Traction</sub> − F<sub>Drag</sub> = m<sub>car</sub>·(ẍ<sub>Pivot</sub> + l/2·(cos(θ)·θ̈ − sin(θ)·θ̇<sup>2</sup>))
 - **F<sub>y</sub>**: F<sub>Gravity</sub> = -m<sub>car</sub>·l/2·(sin(θ)·θ̈ + cos(θ)·θ̇<sup>2</sup>)
