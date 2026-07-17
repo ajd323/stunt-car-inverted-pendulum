@@ -109,7 +109,7 @@ B =
 
 ## 1. LaPlace Transform for Poles (from Linearized Model)
 
-**With small angle approximation:** θ̈ = A0 - Bu<br>
+*With small angle approximation:* θ̈ = A0 - Bu<br>
 &nbsp; θ̈ - Aθ = - Bu<br>
 &nbsp; L{θ̈} - L {Aθ} = - {Bu}<br>
 &nbsp; s²{θ̈(s)} - A{θ(s)} = - B{U(s)}<br>
@@ -118,14 +118,19 @@ B =
 &nbsp; *Poles:* s² - A = 0
 &nbsp; p<sub>1,2</sub> = ±√A<br>
 
-
 ## 2. Poles of Response Dynamics
 
 **Closed-Loop Characteristic Equation:** K<sub>p</sub> + K<sub>i</sub> / s + K<sub>d</sub> / s<br>
 &nbsp; U(s) = C(s)·θ(s) = s³ + B·kd·s² + (B·kp − A)·s + B·ki = 0<br>
-&nbsp; U(s) = **Assume root as *p*:** (s + p)³ = s³ + 3p·s² + 3p²·s + p³ <br>
-&nbsp; K<sub>p</sub> = 3p / B
-&nbsp; K<sub>i</sub> = (3p² + A) / B
-&nbsp; K<sub>d</sub> = p³ / B
+&nbsp; U(s) = *Assume triple real root at s = -p*: (s + p)³ = s³ + 3p·s² + 3p²·s + p³<br>
+&nbsp;&nbsp; K<sub>p</sub> = 3p / B<br>
+&nbsp;&nbsp; K<sub>i</sub> = (3p² + A) / B<br>
+&nbsp;&nbsp; K<sub>d</sub> = p³ / B<br>
 
 ## 3. Critical Dampening Ratio
+&nbsp; *Natural frequency:* ω<sub>n</sub> = |s| = √(σ² + ω²) &nbsp;(distance from the origin)<br>
+&nbsp; *Damping ratio:* ζ = −σ / ω<sub>n</sub><br>
+
+**Visual Diagram**<br>
+&nbsp; ![System Dynamics Model for Stunt Car](images/S_Plane.png)
+
