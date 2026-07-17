@@ -24,24 +24,27 @@ The following is a basic step-by-step rationalization for the dynamics of the un
  
 ### Global Definitions
  
-**Coordinates**<br>
+**Coordinates** <br>
 - *Global Coordinate System*: **X**<sub>global</sub> = [X, Y, Z] with θ about Z<br>
-**General Definitions**<br>
+
+**General Definitions** <br>
 - *x (Displacement)* — the linear translation of the car at the pivot
 - *ẋ (Velocity)* — the linear velocity of the car at the pivot
 - *θ (Angular Displacement)* — the rotation of the car relative to the neutral axis (θ = 0)
 - *θ̇ (Angular Velocity)* — the angular velocity of the car relative to the neutral axis (θ = 0)<br>
-**Initial Conditions (ICs)**<br>
+
+**Initial Conditions (ICs)** <br>
 - *Horizontal Alignment*: x(0) = 0 mm
 - *No Horizontal Velocity*: ẋ(0) = 0 mm/s
 - *Pre-Set Angular Displacement*: θ(0) = 0.5°
 - *No Angular Velocity*: θ̇(0) = 0°/s<br>
-**Relevant Forces**<br>
+**Relevant Forces** <br>
 - *Drag Force*: F<sub>Drag</sub> = (1/2)·ρ·C<sub>D</sub>·A·ẋ
 - *Gravitational Force*: F<sub>Gravity</sub> = m·g
 - *Traction Force*: F<sub>Traction</sub> = τ/R
 - *Normal Force*: F<sub>Normal</sub> = -m·g<br>
-**Visual Diagram**<br>
+
+**Visual Diagram** <br>
  
 ![System Dynamics Model for Stunt Car](images/FBD_Diagram.png)
  
