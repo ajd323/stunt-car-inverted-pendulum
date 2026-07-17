@@ -18,10 +18,6 @@ def linearize(params=DEFAULT_PARAMS):
 
 
 def gains_from_p(p, params=DEFAULT_PARAMS):
-    """
-    Pole-placement PID gains for a triple real closed-loop pole at s = -p.
-    Larger p -> faster / more aggressive response (but more control effort).
-    """
     A, B = linearize(params)
     kd = 3.0 * p / B
     kp = (3.0 * p**2 + A) / B
@@ -30,13 +26,6 @@ def gains_from_p(p, params=DEFAULT_PARAMS):
 
 
 def gains_from_wn_zeta(wn, zeta, params=DEFAULT_PARAMS):
-    """
-    Alternative pole-placement using a dominant 2nd-order pair (wn, zeta)
-    plus a real pole placed at -zeta*wn (a common convention that keeps the
-    real pole roughly matched to the dominant pair's decay rate).
-    wn:   natural frequency [rad/s] -> controls speed
-    zeta: damping ratio (0.7-1.0 recommended -> no/low overshoot)
-    """
     A, B = linearize(params)
     p_real = zeta * wn
     # Desired char. eq: (s + p_real)(s^2 + 2*zeta*wn*s + wn^2)
@@ -51,7 +40,6 @@ def gains_from_wn_zeta(wn, zeta, params=DEFAULT_PARAMS):
 
 
 def verify(kp, ki, kd, theta0_deg=0.5, t_final=3.0, dt=0.002, params=DEFAULT_PARAMS):
-    """Run the actual nonlinear closed-loop sim with these gains and return the solution."""
     z0 = [0.0, 0.0, np.radians(theta0_deg), 0.0]
     pid = PID(kp=kp, ki=ki, kd=kd, setpoint=0.0, u_limit=2.0)
     sol = simulate_closed_loop(params, z0, t_final, dt, pid)

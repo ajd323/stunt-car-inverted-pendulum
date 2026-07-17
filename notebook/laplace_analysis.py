@@ -17,18 +17,15 @@ def open_loop_tf(params=DEFAULT_PARAMS):
     den = [1, 0, -A]
     return signal.TransferFunction(num, den), A, B
 
-
 def open_loop_poles(params=DEFAULT_PARAMS):
     _, A, _ = open_loop_tf(params)
     return np.array([np.sqrt(A), -np.sqrt(A)])
-
 
 def closed_loop_poles(kp, ki, kd, params=DEFAULT_PARAMS):
     """Roots of s^3 + B*kd*s^2 + (B*kp - A)*s + B*ki = 0."""
     A, B = linearize(params)
     coeffs = [1.0, B * kd, B * kp - A, B * ki]
     return np.roots(coeffs)
-
 
 def plot_pole_zero(kp, ki, kd, params=DEFAULT_PARAMS, title_suffix=""):
     ol_poles = open_loop_poles(params)
@@ -60,7 +57,6 @@ def plot_pole_zero(kp, ki, kd, params=DEFAULT_PARAMS, title_suffix=""):
 
     fig.tight_layout()
     plt.show()
-
 
 if __name__ == "__main__":
     A, B = linearize()
