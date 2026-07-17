@@ -50,11 +50,12 @@ The following is a basic step-by-step rationalization for the dynamics of the un
  
 ### 2nd Order ODE Dynamic Representation of Center of Mass
  
-F<sub>External</sub> = m<sub>car</sub>·a
+*Set-up the force balance based on the FBD:* F<sub>External</sub> = m<sub>car</sub>·a
  
 - **F<sub>x</sub>**: F<sub>Traction</sub> − F<sub>Drag</sub> = m<sub>car</sub>·a<sub>x</sub>
-- **F<sub>y</sub>**: F<sub>Gravity</sub> = m<sub>car</sub>·a<sub>y</sub>
-*Solve for acceleration terms (a<sub>x</sub> and a<sub>y</sub>) in terms of displacement and rotation about the center of mass:*
+- **F<sub>y</sub>**: F<sub>Gravity</sub> = m<sub>car</sub>·a<sub>y</sub><br>
+
+*Solve for acceleration terms (a<sub>x</sub> and a<sub>y</sub>) in terms of displacement and rotation about the center of mass:* <br>
  
 - x<sub>COM</sub> = x<sub>Pivot</sub> + l/2·sin(θ)
 - y<sub>COM</sub> = l/2·cos(θ)
