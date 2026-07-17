@@ -109,9 +109,17 @@ B =
 
 ## 1. LaPlace Transform (from Linearized Model)
 
-**With small angle approximation: ** θ̈ = A0 - Bu
-&nbsp; θ̈ - A0 = Bu
+**With small angle approximation:** θ̈ = A0 - Bu
+&nbsp; θ̈ - A0 = - Bu
+&nbsp; L{θ̈} - L {A0} = - {Bu}
+&nbsp; s²{θ̈(s)} - A{0(s)} = - B{U(s)}
+&nbsp; G(s) = 0(s) / U(s) = - B{U(s)} / s²{θ̈(s)} - A{0(s)}
+&nbsp; p<sub>1,2</sub> = ±rad(A) 
 
 ## 2. Poles of Response Dynamics
+
+**Closed-Loop Characteristic Equation:** K<sub>p</sub> + K<sub>i</sub> / s + K<sub>d</sub> / s
+&nbsp; U(s) = C(s)·0(s) = 
+&nbsp; s³ + B·kd·s² + (B·kp − A)·s + B·ki = 0
 
 ## 3. Critical Dampening Ratio
