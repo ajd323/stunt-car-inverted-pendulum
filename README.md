@@ -124,11 +124,11 @@ B =
 
 ## 3. S-Plane Plotting for Optimizing Dynamic Response
 &nbsp; *Input selected K<sub>p</sub>, K<sub>i</sub>, K<sub>d</sub> into closed-loop characteristic equation, and solve for the s-poles and express in the standard form* <br>
-&nbsp;&nbsp; Plug PID-values into *s³ + B·K<sub>d</sub>·s² + (B·K<sub>p</sub> − A)·s + B·K<sub>i</sub> = 0* (Closed-Loop Characteristic Equation)
-&nbsp;&nbsp; Turn Cubic Equation (s³) to Quadratic Equation (s²)
-&nbsp;&nbsp; Determine ωₙ and ζ with the standard form *s² + 2ζωₙ·s + ωₙ² = 0*
-&nbsp;&nbsp; Solve for σ (Decay Rate, −ζωₙ) and ω (Oscillation Frequency, ωₙ√(1−ζ²))
-&nbsp;&nbsp; Plot on s-plane with s = σ ± jω
+&nbsp;&nbsp; Plug PID-values into *s³ + B·K<sub>d</sub>·s² + (B·K<sub>p</sub> − A)·s + B·K<sub>i</sub> = 0* (Closed-Loop Characteristic Equation)<br>
+&nbsp;&nbsp; Turn Cubic Equation (s³) to Quadratic Equation (s²)<br>
+&nbsp;&nbsp; Determine ωₙ and ζ with the standard form *s² + 2ζωₙ·s + ωₙ² = 0*<br>
+&nbsp;&nbsp; Solve for σ (Decay Rate, −ζωₙ) and ω (Oscillation Frequency, ωₙ√(1−ζ²))<br>
+&nbsp;&nbsp; Plot on s-plane with s = σ ± jω<br>
 
 **Visual Diagram 1**<br>
 &nbsp; ![System Dynamics Model for Stunt Car](images/S_Plane.png)
