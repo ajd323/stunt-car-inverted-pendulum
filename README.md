@@ -70,9 +70,10 @@ The following is a basic step-by-step rationalization for the dynamics of the un
 - **F<sub>y</sub>**: F<sub>Gravity</sub> = -m<sub>car</sub>·l/2·(sin(θ)·θ̈ + cos(θ)·θ̇<sup>2</sup>)
 - **F<sub>x</sub>**: τ/R − (1/2)·ρ·C<sub>D</sub>·(l·w)·ẋ = m<sub>car</sub>·(ẍ<sub>Pivot</sub> + l/2·(cos(θ)·θ̈ − sin(θ)·θ̇<sup>2</sup>))
 - **F<sub>y</sub>**: m·g = -m<sub>car</sub>·l/2·(sin(θ)·θ̈ + cos(θ)·θ̇<sup>2</sup>)
+
 ## 2. Nonlinear Form of the ODE System
  
-*State Vector*: **z** = [z<sub>1</sub>, z<sub>2</sub>, z<sub>3</sub>, z<sub>4</sub>]<sup>T</sup> = [x, ẋ, θ, θ̇]
+*State Vector*: **z** = [z<sub>1</sub>, z<sub>2</sub>, z<sub>3</sub>, z<sub>4</sub>]<sup>T</sup> = [x, ẋ, θ, θ̇] <br>
 *Input Parameter*: u = τ
  
 ### Standard Nonlinear ODE (**z** = [z<sub>1</sub>, z<sub>2</sub>, z<sub>3</sub>, z<sub>4</sub>]<sup>T</sup>)
