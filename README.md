@@ -127,10 +127,11 @@ B =
 &nbsp;&nbsp; K<sub>i</sub> = (3p² + A) / B<br>
 &nbsp;&nbsp; K<sub>d</sub> = p³ / B<br>
 
-## 3. Critical Dampening Ratio
+## 3. S-Plane Plotting for Optimizing Dynamic Response
 &nbsp; *Natural frequency:* ω<sub>n</sub> = |s| = √(σ² + ω²) &nbsp;(distance from the origin)<br>
 &nbsp; *Damping ratio:* ζ = −σ / ω<sub>n</sub><br>
 
 **Visual Diagram**<br>
 &nbsp; ![System Dynamics Model for Stunt Car](images/S_Plane.png)
+&nbsp; ![System Dynamics Model for Stunt Car](images/Response.png)
 
