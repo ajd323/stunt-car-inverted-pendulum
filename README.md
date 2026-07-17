@@ -113,7 +113,7 @@ B =
 &nbsp; θ̈ - Aθ = - Bu<br>
 &nbsp; L{θ̈} - L {Aθ} = - {Bu}<br>
 &nbsp; s²{θ̈(s)} - A{θ(s)} = - B{U(s)}<br>
-&nbsp; θ(s) = - B{U(s)} / s²{θ̈(s)} - A{θ(s)}<br> (*assume zero initial conditions*)
+&nbsp; θ(s) = - B{U(s)} / s²{θ̈(s)} - A{θ(s)} (*assume zero initial conditions*)<br>
 &nbsp; G(s) = θ(s) / U(s) = - B / (s² - A)<br>
 &nbsp; *Poles:* s² - A = 0, s<sub>Poles</sub> = p<sub>1,2</sub> = ±√A<br>
 
