@@ -11,11 +11,11 @@ The following is a basic step-by-step rationalization for the dynamics of the un
 # File Structure and Set-Up Guide
 
 stunt-car-inverted-pendulum/<br>
-├── requirements.txt        # Installs required for operating UI<br>
-├── pendulum_model.py       # Physics/simulation backend (ODEs, PID class, solvers)<br>
-├── pid_tuner.py            # Analytical pole-placement PID gain solver<br>
-├── laplace_analysis.py     # Laplace transform and s-plane analysis<br>
-└── pendulum_gui.py         # Simulation UI and visualization<br>
+├── requirements.txt &nbsp; # Installs required for operating UI<br>
+├── pendulum_model.py &nbsp; # Physics/simulation backend (ODEs, PID class, solvers)<br>
+├── pid_tuner.py &nbsp; # Analytical pole-placement PID gain solver<br>
+├── laplace_analysis.py &nbsp; # Laplace transform and s-plane analysis<br>
+└── pendulum_gui.py &nbsp; # Simulation UI and visualization<br>
 
 **1. Clone the repository to Laptop IDE**: The script is not accessible through the GitHub Codespace. Recommend to use Visual Studio Code to manage virtual environment and files.<br>
 **2. Create and Activate Python Virtual Environment**: In the IDE, create a virtual python envionrment to load the requirements from "requirements.txt" file.<br>
